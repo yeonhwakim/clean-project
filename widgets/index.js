@@ -1,6 +1,6 @@
-import { checkListInteraction } from "./checklist-interaction";
-import { checkListForm } from "./checklist-form";
-import { checkListList } from "./checklist-list";
-import { checklistEdit } from "./checklist-edit";
+import { checkListInteraction } from "./checklistInteraction";
+import { checkListForm } from "./checklistForm";
+import { checkListList } from "./checklistList";
+import { checklistEdit } from "./checklistEdit";
 
-export {checkListInteraction,checkListForm,checkListList, checklistEdit}
+export { checkListInteraction, checkListForm, checkListList, checklistEdit };

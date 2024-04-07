@@ -1,0 +1,1 @@
+// DELETE checklist(item: ChecklistItem)

@@ -1,0 +1,4 @@
+checklist = {
+  id,
+  check?
+}

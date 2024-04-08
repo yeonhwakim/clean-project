@@ -3,4 +3,4 @@ checklist = {
   title,
   description,
   check,
-}
+};

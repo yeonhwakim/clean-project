@@ -1,4 +1,4 @@
 checklist = {
   id,
-  check?
-}
+  userId,
+};

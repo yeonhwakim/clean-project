@@ -1,1 +1,0 @@
-// CREATE checklist(item: ChecklistItem)

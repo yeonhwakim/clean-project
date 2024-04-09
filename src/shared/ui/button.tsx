@@ -1,9 +1,11 @@
 export default function Button({
+  type,
   name,
   onClickHandler,
 }: {
+  type: "submit" | "reset" | "button" | undefined
   name: string;
-  onClickHandler: () => void;
+  onClickHandler?: () => void;
 }) {
-  return <button onClick={onClickHandler}>{name}</button>;
+  return <button type={type} onClick={onClickHandler}>{name}</button>;
 }

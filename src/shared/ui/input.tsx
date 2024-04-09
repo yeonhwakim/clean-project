@@ -5,7 +5,7 @@ export default function Input({
 }: {
   placeholder: string;
   value: string;
-  onChangeHandler: () => void;
+  onChangeHandler: (arg0: any) => void;
 }) {
   return (
     <input

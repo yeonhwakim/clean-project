@@ -3,7 +3,7 @@ export default function Form({
   onSubmitHandler,
 }: {
   children: React.ReactNode;
-  onSubmitHandler: () => void;
+  onSubmitHandler: (arg0: any) => void;
 }) {
   return <form onSubmit={onSubmitHandler}>{children}</form>;
 }

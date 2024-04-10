@@ -1,16 +1,16 @@
-import { Task } from '../../shared/typing';
+import { Task } from '../../shared/typing/server';
 
 const tasks: Task[] = [
   {
     id: '1',
-    checklist_id: '1',
-    title: '욕실 청소',
+    checklistId: '1',
+    name: '욕실 청소',
     isChecked: false,
   },
   {
     id: '2',
-    checklist_id: '1',
-    title: '방 청소',
+    checklistId: '1',
+    name: '방 청소',
     isChecked: false,
   }
 ]

@@ -12,7 +12,7 @@ export default function CreateItem() {
 
   // 나중에 삭제
   useEffect(() => {
-    fetchItem(1);
+    fetchItem();
   }, []);
 
   return (

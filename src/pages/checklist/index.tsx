@@ -1,4 +1,4 @@
-import { ToggleItem } from "../../features/toggle-item";
+import { ToggleTask } from "../../features/toggle-task";
 
 const ChecklistPage = () => {
   return (

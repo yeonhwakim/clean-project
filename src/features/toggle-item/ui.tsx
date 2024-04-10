@@ -7,7 +7,7 @@ type ToggleItemProps = {
   withStatus?: boolean;
 }
 
-export const ToggleItem = ({ itemId, withStatus = true }: ToggleItemProps) => {
+export const ToggleItem = ({ itemId }: ToggleItemProps) => {
   const item = itemModel.useItem(itemId);
 
   if (!item) {
@@ -21,7 +21,7 @@ export const ToggleItem = ({ itemId, withStatus = true }: ToggleItemProps) => {
         onClick={() => toggleItemModel.events.toggleItem(itemId)}
         // checked={item.isChecked}
       >
-        {withStatus && item.isChecked ? '완료' : '미완료'}
+        {item.isChecked ? '완료' : '미완료'}
       </button>
     </>
   )

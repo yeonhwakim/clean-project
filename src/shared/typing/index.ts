@@ -1,5 +1,6 @@
 export type Item = {
   id: string;
-  name: string;
+  checklist_id: string;
+  title: string;
   isChecked: boolean;
 }

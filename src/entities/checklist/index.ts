@@ -1,0 +1,1 @@
+export * as checklistModel from './model';

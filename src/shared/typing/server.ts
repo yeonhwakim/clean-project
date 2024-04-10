@@ -1,6 +1,6 @@
 export type Task = {
-  id: string;
-  checklistId: string;
+  id: number;
+  checklistId: number;
   name: string;
   isChecked?: boolean;
-}
+};

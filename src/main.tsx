@@ -4,12 +4,12 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import { ChecklistPage } from './pages'
+import { Home } from './pages';
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <ChecklistPage />,
+    element: <Home />,
   },
 ]);
 

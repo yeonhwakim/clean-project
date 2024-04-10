@@ -1,1 +1,1 @@
-export * as itemModel from './model';
+export * as checklistModel from './model';

@@ -1,0 +1,1 @@
+export * as itemModel from './model';

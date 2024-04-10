@@ -1,1 +1,0 @@
-// UPDATE checklist(item: ChecklistItem)

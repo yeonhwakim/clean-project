@@ -15,20 +15,16 @@ const tasks: Task[] = [
   },
 ];
 
-export const fetchItem = () => {
-  localStorage.setItem("tasks", JSON.stringify(tasks));
+export const useTask = (itemId: number) => {
+  return tasks.find((item) => item.id === itemId);
 };
 
-export const useTask = (itemId: number) => {
-  return tasks.find(item => item.id === itemId);
-}
-
 export const updateTaskCheckState = (itemId: number) => {
-  const task = tasks.find(i => i.id === itemId);
-  
+  const task = tasks.find((i) => i.id === itemId);
+
   if (!task) {
-    throw new Error('item not found');
+    throw new Error("item not found");
   }
 
   task.isChecked = !task.isChecked;
-}
+};

@@ -1,14 +1,20 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 import Button from "../../shared/ui/button";
 import Form from "../../shared/ui/form";
 import Input from "../../shared/ui/input";
 
-import { events } from "./model";
 import { fetchItem } from "../../entities/checklist/model";
 
-export default function CreateItem() {
-  const [task, setTask] = useState("");
+import { events } from "./model/create-task";
+
+export default function CreateTask() {
+  const {
+    useCreateTaskStore: {
+      use: { value, reset, change },
+    },
+    onSubmitHandler,
+  } = events;
 
   // 나중에 삭제
   useEffect(() => {
@@ -16,16 +22,11 @@ export default function CreateItem() {
   }, []);
 
   return (
-    <Form
-      state={task}
-      dispatch={setTask}
-      onSubmitHandler={events.onSubmitHandler}
-    >
+    <Form state={value()} reset={reset()} onSubmitHandler={onSubmitHandler}>
       <Input
         placeholder="Please, add task."
-        value={task}
-        dispatch={setTask}
-        onChangeHandler={events.onChangeHandler}
+        value={value()}
+        onChangeHandler={change()}
       />
       <Button type="submit" name="Add" />
     </Form>

@@ -1,8 +1,27 @@
-export type Task = {
-  name: string;
+import createSelectors from "../../../shared/store/selectors";
+import inputStore from "../../../shared/store/input";
+import { Task } from "../../../shared/typing/client";
+
+const useCreateTaskStore = createSelectors(inputStore);
+
+const onSubmitHandler = ({
+  e,
+  state,
+  reset,
+}: {
+  e: React.FormEvent<HTMLFormElement>;
+  state: string;
+  reset: () => void;
+}) => {
+  e.preventDefault();
+
+  if (!state) return;
+
+  createTask({ name: state });
+  reset();
 };
 
-const createItem = (task: Task) => {
+const createTask = (task: Task) => {
   const tasks = JSON.parse(localStorage.getItem("tasks") || "[]");
   localStorage.setItem(
     "tasks",
@@ -10,28 +29,4 @@ const createItem = (task: Task) => {
   );
 };
 
-const onChangeHandler = ({
-  e,
-  dispatch,
-}: {
-  e: React.ChangeEvent<HTMLInputElement>;
-  dispatch: React.Dispatch<React.SetStateAction<string>>;
-}) => {
-  dispatch(e.target.value);
-};
-
-const onSubmitHandler = ({
-  e,
-  state,
-  dispatch,
-}: {
-  e: React.FormEvent<HTMLFormElement>;
-  state: string;
-  dispatch: React.Dispatch<React.SetStateAction<string>>;
-}) => {
-  e.preventDefault();
-  createItem({ name: state });
-  dispatch("");
-};
-
-export const events = { createItem, onChangeHandler, onSubmitHandler };
+export const events = { onSubmitHandler, useCreateTaskStore };

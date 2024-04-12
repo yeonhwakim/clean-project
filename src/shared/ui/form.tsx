@@ -1,24 +1,24 @@
 export default function Form({
   children,
   state,
-  dispatch,
+  reset,
   onSubmitHandler,
 }: {
   children: React.ReactNode;
   state: string;
-  dispatch: React.Dispatch<React.SetStateAction<string>>;
+  reset: () => void;
   onSubmitHandler: ({
     e,
     state,
-    dispatch,
+    reset,
   }: {
     e: React.FormEvent<HTMLFormElement>;
     state: string;
-    dispatch: React.Dispatch<React.SetStateAction<string>>;
+    reset: () => void;
   }) => void;
 }) {
   return (
-    <form onSubmit={(e) => onSubmitHandler({ e, state, dispatch })}>
+    <form onSubmit={(e) => onSubmitHandler({ e, state, reset })}>
       {children}
     </form>
   );

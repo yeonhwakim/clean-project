@@ -3,9 +3,13 @@ export default function Button({
   name,
   onClickHandler,
 }: {
-  type: "submit" | "reset" | "button" | undefined
+  type: "submit" | "reset" | "button" | undefined;
   name: string;
   onClickHandler?: () => void;
 }) {
-  return <button type={type} onClick={onClickHandler}>{name}</button>;
+  return (
+    <button type={type} onClick={onClickHandler}>
+      {name}
+    </button>
+  );
 }

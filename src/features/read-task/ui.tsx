@@ -1,5 +1,5 @@
 import List from "../../shared/ui/list";
-import Row from "../../shared/ui/row";
+import Task from "../../widgets/task/ui";
 
 import { events } from "./model/read-task";
 
@@ -9,11 +9,12 @@ export default function ReadTask() {
       use: { tasks },
     },
   } = events;
+
   return (
     tasks().length > 0 && (
       <List>
         {tasks().map(({ id, name }) => (
-          <Row key={id}>{name}</Row>
+          <Task key={id} id={id} name={name}></Task>
         ))}
       </List>
     )

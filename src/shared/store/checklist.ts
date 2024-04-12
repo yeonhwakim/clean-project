@@ -20,6 +20,7 @@ interface checklistState {
   tasks: Task[];
   read: () => void;
   add: (name: string) => void;
+  remove: (id: number) => void;
 }
 
 const checklistStore = create<checklistState>()((set) => ({
@@ -32,6 +33,8 @@ const checklistStore = create<checklistState>()((set) => ({
         { id: state.tasks.length + 1, name, checklistId: 1, isChecked: false },
       ],
     })),
+  remove: (id) =>
+    set((state) => ({ tasks: state.tasks.filter((task) => task.id !== id) })),
 }));
 
 export default checklistStore;

@@ -6,6 +6,7 @@ interface ChecklistStore {
   addTask: (newTask: Task) => void;
   removeTask: (id: number) => void;
   toggleTask: (id: number) => void;
+  editTask: (id: number, newName: string) => void;
   getTask: (id: number) => Task | undefined;
 }
 
@@ -34,6 +35,11 @@ export const useChecklistStore = create<ChecklistStore>((set) => ({
   })),
   toggleTask: (id) => set((state) => ({
     tasks: state.tasks.map((task) => task.id === id ? { ...task, isChecked: !task.isChecked } : task)
+  })),
+  editTask: (id, newName) => set((state) => ({
+    tasks: state.tasks.map((task) => 
+      task.id === id ? { ...task, name: newName } : task
+    )
   })),
   getTask: (id) => {
     return initialTasks.find((task) => task.id === id);

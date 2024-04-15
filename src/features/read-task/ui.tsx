@@ -1,19 +1,14 @@
 import List from "../../shared/ui/list";
 import Task from "../../widgets/task/ui";
 
-import { events } from "./model/read-task";
+import { actions } from "./model/read-task";
 
 export default function ReadTask() {
-  const {
-    useChecklistStore: {
-      use: { tasks },
-    },
-  } = events;
-
+  const tasks = actions.tasks;
   return (
-    tasks().length > 0 && (
+    tasks.length > 0 && (
       <List>
-        {tasks().map(({ id, name }) => (
+        {tasks.map(({ id, name }) => (
           <Task key={id} id={id} name={name}></Task>
         ))}
       </List>

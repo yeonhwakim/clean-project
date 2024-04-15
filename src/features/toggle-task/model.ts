@@ -1,8 +1,5 @@
-import { checklistModel } from '../../entities/checklist';
+import { useChecklistStore } from '../../entities/checklist/model';
 
-// 상태 변경
-const toggleTask = (itemId: number) => {
-  checklistModel.updateTaskCheckState(itemId);
+export const actions = {
+  toggleTask: useChecklistStore.getState().toggleTask
 }
-
-export const events = { toggleTask };

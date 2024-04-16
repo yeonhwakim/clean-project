@@ -1,4 +1,5 @@
 import { create } from 'zustand'
+import { produce } from 'immer';
 import type { Task } from '../../shared/typing/server';
 
 interface ChecklistStore {
@@ -27,19 +28,23 @@ const initialTasks: Task[] = [
 
 export const useChecklistStore = create<ChecklistStore>((set) => ({
   tasks: [...initialTasks],
-  addTask: (newTask) => set((state) => ({
-    tasks: [...state.tasks, newTask]
+  addTask: (newTask) => set(produce((state: ChecklistStore) => {
+    state.tasks.push(newTask);
   })),
-  removeTask: (id) => set((state) => ({
-    tasks: state.tasks.filter((task) => task.id !== id)
+  removeTask: (id) => set(produce((state: ChecklistStore) => {
+    state.tasks = state.tasks.filter(task => task.id !== id);
   })),
-  toggleTask: (id) => set((state) => ({
-    tasks: state.tasks.map((task) => task.id === id ? { ...task, isChecked: !task.isChecked } : task)
+  toggleTask: (id) => set(produce((state: ChecklistStore) => {
+    const task = state.tasks.find(task => task.id === id);
+    if (task) {
+      task.isChecked = !task.isChecked;
+    }
   })),
-  editTask: (id, newName) => set((state) => ({
-    tasks: state.tasks.map((task) => 
-      task.id === id ? { ...task, name: newName } : task
-    )
+  editTask: (id, newName) => set(produce((state: ChecklistStore) => {
+    const task = state.tasks.find(task => task.id === id);
+    if (task) {
+      task.name = newName;
+    }
   })),
   getTask: (id) => {
     return initialTasks.find((task) => task.id === id);

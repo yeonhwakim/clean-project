@@ -7,7 +7,7 @@ interface InputState {
 }
 
 const inputStore = create<InputState>()((set) => ({
-  value: "",
+  value: "10",
   change: (e) => set(() => ({ value: e.target.value })),
   reset: () => set(() => ({ value: "" })),
 }));

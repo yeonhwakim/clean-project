@@ -1,31 +1,25 @@
-import { useEffect, useState } from "react";
-
 import Button from "../../shared/ui/button";
 import Form from "../../shared/ui/form";
 import Input from "../../shared/ui/input";
 
-import { events } from "./model";
-import { fetchItem } from "../../entities/checklist/model";
+import { actions } from "./model/create-task";
 
-export default function CreateItem() {
-  const [task, setTask] = useState("");
+export default function CreateTask() {
+  const { inputValue, changeInput } = actions;
 
-  // 나중에 삭제
-  useEffect(() => {
-    fetchItem();
-  }, []);
+  const onSubmitHandler = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    actions.addTask(inputValue);
+    actions.resetInput;
+    actions.readTask;
+  };
 
   return (
-    <Form
-      state={task}
-      dispatch={setTask}
-      onSubmitHandler={events.onSubmitHandler}
-    >
+    <Form onSubmitHandler={onSubmitHandler}>
       <Input
         placeholder="Please, add task."
-        value={task}
-        dispatch={setTask}
-        onChangeHandler={events.onChangeHandler}
+        value={inputValue}
+        onChangeHandler={changeInput}
       />
       <Button type="submit" name="Add" />
     </Form>

@@ -1,26 +1,28 @@
-import { useState } from "react";
 
 import Button from "../../shared/ui/button";
 import Form from "../../shared/ui/form";
 import Input from "../../shared/ui/input";
 
-import { events } from "./model";
+import { actions } from "./model/create-task";
 
+export default function CreateTask() {
+  const onSubmitHandler = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    actions.addTask(actions.inputValue);
+    actions.resetInput;
+    actions.readTask;
+  };
 
-export default function CreateItem() {
-  const [task, setTask] = useState("");
+  const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
+    actions.changeInput(e.target.value);
+  };
 
   return (
-    <Form
-      state={task}
-      dispatch={setTask}
-      onSubmitHandler={events.onSubmitHandler}
-    >
+    <Form onSubmitHandler={onSubmitHandler}>
       <Input
         placeholder="Please, add task."
-        value={task}
-        dispatch={setTask}
-        onChangeHandler={events.onChangeHandler}
+        value={actions.inputValue}
+        onChangeHandler={onChangeHandler}
       />
       <Button type="submit" name="Add" />
     </Form>

@@ -1,19 +1,14 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 import Button from "../../shared/ui/button";
 import Form from "../../shared/ui/form";
 import Input from "../../shared/ui/input";
 
 import { events } from "./model";
-import { fetchItem } from "../../entities/checklist/model";
+
 
 export default function CreateItem() {
   const [task, setTask] = useState("");
-
-  // 나중에 삭제
-  useEffect(() => {
-    fetchItem();
-  }, []);
 
   return (
     <Form

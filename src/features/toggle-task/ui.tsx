@@ -1,4 +1,4 @@
-// import { Checkbox } from 'shared/ui';
+// import { Checkbox } from '../../shared/ui/checkbox';
 import { checklistModel } from '../../entities/checklist';
 import * as toggleItemModel from './model';
 
@@ -8,7 +8,7 @@ type ToggleItemProps = {
 }
 
 export const ToggleTask = ({ itemId }: ToggleItemProps) => {
-  const task = checklistModel.useTask(itemId);
+  const task = checklistModel.selectors.useTask(itemId);
 
   if (!task) {
     return null;
@@ -16,13 +16,7 @@ export const ToggleTask = ({ itemId }: ToggleItemProps) => {
   
   return (
     <>
-      {/* <Checkbox /> */}
-      <button 
-        onClick={() => toggleItemModel.events.toggleTask(itemId)}
-        // checked={item.isChecked}
-      >
-        {task.isChecked ? '완료' : '미완료'}
-      </button>
+      <button onClick={() => toggleItemModel.actions.toggleTask(itemId)}>{task.isChecked ? '완료' : '미완료'}</button>
     </>
   )
 }

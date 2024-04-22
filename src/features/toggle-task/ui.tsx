@@ -1,4 +1,4 @@
-import { Checkbox } from '../../shared/ui/checkbox';
+// import { Checkbox } from '../../shared/ui/checkbox';
 import { checklistModel } from '../../entities/checklist';
 import * as toggleItemModel from './model';
 

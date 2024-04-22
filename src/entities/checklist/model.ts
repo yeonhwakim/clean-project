@@ -35,6 +35,7 @@ export const useChecklistStore = create<ChecklistStore>((set) => ({
     state.tasks = state.tasks.filter(task => task.id !== id);
   })),
   toggleTask: (id) => set(produce((state: ChecklistStore) => {
+    console.log('toggleTask', id);
     const task = state.tasks.find(task => task.id === id);
     if (task) {
       task.isChecked = !task.isChecked;

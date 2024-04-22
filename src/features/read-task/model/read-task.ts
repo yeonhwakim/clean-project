@@ -1,3 +1,3 @@
 import checklistStore from "../../../shared/store/checklist";
 
-export const actions = { tasks: checklistStore((state) => state.tasks) };
+export const actions = { tasks: checklistStore.getState().tasks };

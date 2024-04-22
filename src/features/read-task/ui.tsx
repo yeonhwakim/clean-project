@@ -1,5 +1,5 @@
 import List from "../../shared/ui/list";
-import Task from "../../widgets/task/ui";
+// import Task from "../../widgets/task/ui";
 
 import { actions } from "./model/read-task";
 
@@ -9,7 +9,8 @@ export default function ReadTask() {
     tasks.length > 0 && (
       <List>
         {tasks.map(({ id, name }) => (
-          <Task key={id} id={id} name={name}></Task>
+          <li key={id}>{name}</li>
+          // <Task key={id} id={id} name={name}></Task>
         ))}
       </List>
     )

@@ -2,13 +2,13 @@ import { create } from "zustand";
 
 interface InputState {
   value: string;
-  change: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  change: (value: string) => void;
   reset: () => void;
 }
 
 const inputStore = create<InputState>()((set) => ({
-  value: "10",
-  change: (e) => set(() => ({ value: e.target.value })),
+  value: "",
+  change: (value) => set({ value }),
   reset: () => set(() => ({ value: "" })),
 }));
 

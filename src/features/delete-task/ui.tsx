@@ -1,20 +1,21 @@
-import RemoveButton from "../../shared/ui/removeButton";
-import { events } from "./model";
+// import RemoveButton from "../../shared/ui/removeButton";
+// import { events } from "./model";
 
-export default function DeleteTask({ id }: { id: number }) {
-  const {
-    useChecklistStore: {
-      use: { remove },
-    },
-    onClickHandler,
-  } = events;
+export default function DeleteTask() {
+  // const {
+  //   useChecklistStore: {
+  //     use: { remove },
+  //   },
+  //   onClickHandler,
+  // } = events;
   return (
-    <RemoveButton
-      type="button"
-      name="delete"
-      id={id}
-      remove={remove()}
-      onClickHandler={onClickHandler}
-    />
+    <></>
+    // <RemoveButton
+    //   type="button"
+    //   name="delete"
+    //   id={id}
+    //   remove={remove()}
+    //   onClickHandler={onClickHandler}
+    // />
   );
 }

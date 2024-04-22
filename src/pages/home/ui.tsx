@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <Layout>
       <CreateTask />
-      {/* <ReadTask /> */}
+      <ReadTask />
     </Layout>
   );
 }

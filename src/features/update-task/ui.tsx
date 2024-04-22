@@ -1,21 +1,22 @@
-import UpdateButton from "../../shared/ui/updateButton";
-import { events } from "./model";
+// import UpdateButton from "../../shared/ui/updateButton";
+// import { events } from "./model";
 
-export default function UpdateTask({ id }: { id: number }) {
-  const {
-    useChecklistStore: {
-      use: { update },
-    },
-    onClickHandler,
-  } = events;
+export default function UpdateTask() {
+  // const {
+  //   useChecklistStore: {
+  //     use: { update },
+  //   },
+  //   onClickHandler,
+  // } = events;
 
   return (
-    <UpdateButton
-      type="button"
-      name="update"
-      id={id}
-      update={update()}
-      onClickHandler={onClickHandler}
-    />
+    <></>
+    // <UpdateButton
+    //   type="button"
+    //   name="update"
+    //   id={id}
+    //   update={update()}
+    //   onClickHandler={onClickHandler}
+    // />
   );
 }

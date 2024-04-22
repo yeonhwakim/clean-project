@@ -5,7 +5,7 @@ export default function Input({
 }: {
   placeholder: string;
   value?: string;
-  onChangeHandler?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onChangeHandler: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }) {
   return (
     <input

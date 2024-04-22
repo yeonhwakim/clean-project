@@ -12,12 +12,16 @@ export default function CreateTask() {
     actions.readTask;
   };
 
+  const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
+    actions.changeInput(e.target.value);
+  };
+
   return (
     <Form onSubmitHandler={onSubmitHandler}>
       <Input
         placeholder="Please, add task."
         value={actions.inputValue}
-        onChangeHandler={actions.changeInput}
+        onChangeHandler={onChangeHandler}
       />
       <Button type="submit" name="Add" />
     </Form>

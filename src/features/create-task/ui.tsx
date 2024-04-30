@@ -1,7 +1,7 @@
 
-import Button from "../../shared/ui/button";
-import Form from "../../shared/ui/form";
-import Input from "../../shared/ui/input";
+import Button from "../../shared/ui-old/button";
+import Form from "../../shared/ui-old/form";
+import Input from "../../shared/ui-old/input";
 
 import { actions } from "./model/create-task";
 

@@ -1,4 +1,4 @@
-import List from "../../shared/ui/list";
+import List from "../../shared/ui-old/list";
 // import Task from "../../widgets/task/ui";
 
 import { actions } from "./model/read-task";

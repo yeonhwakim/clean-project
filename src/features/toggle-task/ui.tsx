@@ -1,6 +1,6 @@
 import { Checkbox } from '@/shared/ui/checkbox';
-import { checklistModel } from '../../entities/checklist';
 import * as toggleItemModel from './model';
+import { useChecklistStore } from '@/entities/checklist/model';
 
 type ToggleItemProps = {
   itemId: number;
@@ -8,7 +8,9 @@ type ToggleItemProps = {
 }
 
 export const ToggleTask = ({ itemId }: ToggleItemProps) => {
-  const task = checklistModel.selectors.useTask(itemId);
+  const tasks = useChecklistStore(state => state.tasks);
+  const task = tasks.find(task => task.id === itemId);
+
 
   if (!task) {
     return null;

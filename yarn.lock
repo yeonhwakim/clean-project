@@ -180,6 +180,13 @@
   dependencies:
     "@babel/helper-plugin-utils" "^7.24.0"
 
+"@babel/runtime@^7.12.5":
+  version "7.24.7"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.24.7.tgz#f4f0d5530e8dbdf59b3451b9b3e594b6ba082e12"
+  integrity sha512-UwgBRMjJP+xv857DCngvqXI3Iq6J4v0wXmwc6sapg+zyhbwmQX67LUEFrkK5tbyJ30jGuG3ZvWpBiB9LCy1kWw==
+  dependencies:
+    regenerator-runtime "^0.14.0"
+
 "@babel/template@^7.22.15", "@babel/template@^7.24.0":
   version "7.24.0"
   resolved "https://registry.yarnpkg.com/@babel/template/-/template-7.24.0.tgz#c6a524aa93a4a05d66aaf31654258fae69d87d50"
@@ -512,6 +519,37 @@
   version "4.14.0"
   resolved "https://registry.yarnpkg.com/@rollup/rollup-win32-x64-msvc/-/rollup-win32-x64-msvc-4.14.0.tgz#0bb7ac3cd1c3292db1f39afdabfd03ccea3a3d34"
   integrity sha512-aGg7iToJjdklmxlUlJh/PaPNa4PmqHfyRMLunbL3eaMO0gp656+q1zOKkpJ/CVe9CryJv6tAN1HDoR8cNGzkag==
+
+"@tanstack/query-core@5.40.0":
+  version "5.40.0"
+  resolved "https://registry.yarnpkg.com/@tanstack/query-core/-/query-core-5.40.0.tgz#c74ae8303752ed4b5a0ab848ec71a0e6e8179f83"
+  integrity sha512-eD8K8jsOIq0Z5u/QbvOmfvKKE/XC39jA7yv4hgpl/1SRiU+J8QCIwgM/mEHuunQsL87dcvnHqSVLmf9pD4CiaA==
+
+"@tanstack/query-devtools@5.37.1":
+  version "5.37.1"
+  resolved "https://registry.yarnpkg.com/@tanstack/query-devtools/-/query-devtools-5.37.1.tgz#8dcfa1488b4f2e353be7eede6691b0ad9197183b"
+  integrity sha512-XcG4IIHIv0YQKrexTqo2zogQWR1Sz672tX2KsfE9kzB+9zhx44vRKH5si4WDILE1PIWQpStFs/NnrDQrBAUQpg==
+
+"@tanstack/react-query-devtools@^5.40.1":
+  version "5.40.1"
+  resolved "https://registry.yarnpkg.com/@tanstack/react-query-devtools/-/react-query-devtools-5.40.1.tgz#35b29f5bb38882e53cf8f1d20b8aab840e2a416f"
+  integrity sha512-/AN2UsbuL+28/KSlBkVHq/4chHTEp4l2UWTKWixXbn4pprLQrZGmQTAKN4tYxZDuNwNZY5+Zp67pDfXj+F/UBA==
+  dependencies:
+    "@tanstack/query-devtools" "5.37.1"
+
+"@tanstack/react-query@^5.40.1":
+  version "5.40.1"
+  resolved "https://registry.yarnpkg.com/@tanstack/react-query/-/react-query-5.40.1.tgz#c1098791fea42bdc4c48938fb0131fa9ccc30fae"
+  integrity sha512-gOcmu+gpFd2taHrrgMM9RemLYYEDYfsCqszxCC0xtx+csDa4R8t7Hr7SfWXQP13S2sF+mOxySo/+FNXJFYBqcA==
+  dependencies:
+    "@tanstack/query-core" "5.40.0"
+
+"@testing-library/react@^16.0.0":
+  version "16.0.0"
+  resolved "https://registry.yarnpkg.com/@testing-library/react/-/react-16.0.0.tgz#0a1e0c7a3de25841c3591b8cb7fb0cf0c0a27321"
+  integrity sha512-guuxUKRWQ+FgNX0h0NS0FIq3Q3uLtWVpBzcLOggmfMoUpgBnzBzvLLd4fbm6yS8ydJd94cIfY4yP9qUQjM2KwQ==
+  dependencies:
+    "@babel/runtime" "^7.12.5"
 
 "@types/babel__core@^7.20.5":
   version "7.20.5"
@@ -1465,6 +1503,13 @@ react-dom@^18.2.0:
     loose-envify "^1.1.0"
     scheduler "^0.23.0"
 
+react-error-boundary@^4.0.13:
+  version "4.0.13"
+  resolved "https://registry.yarnpkg.com/react-error-boundary/-/react-error-boundary-4.0.13.tgz#80386b7b27b1131c5fbb7368b8c0d983354c7947"
+  integrity sha512-b6PwbdSv8XeOSYvjt8LpgpKrZ0yGdtZokYwkwV2wlcZbxgopHX/hgPl5VgpnoVOWd868n1hktM8Qm4b+02MiLQ==
+  dependencies:
+    "@babel/runtime" "^7.12.5"
+
 react-refresh@^0.14.0:
   version "0.14.0"
   resolved "https://registry.yarnpkg.com/react-refresh/-/react-refresh-0.14.0.tgz#4e02825378a5f227079554d4284889354e5f553e"
@@ -1491,6 +1536,11 @@ react@^18.2.0:
   integrity sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ==
   dependencies:
     loose-envify "^1.1.0"
+
+regenerator-runtime@^0.14.0:
+  version "0.14.1"
+  resolved "https://registry.yarnpkg.com/regenerator-runtime/-/regenerator-runtime-0.14.1.tgz#356ade10263f685dda125100cd862c1db895327f"
+  integrity sha512-dYnhHh0nJoMfnkZs6GmmhFknAGRrLznOu5nc9ML+EJxGvrx6H7teuevqVqCuPcPK//3eDrrjQhehXVx9cnkGdw==
 
 resolve-from@^4.0.0:
   version "4.0.0"

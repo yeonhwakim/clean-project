@@ -1,0 +1,1 @@
+export { tipsPageRoute } from './tips-page.route';

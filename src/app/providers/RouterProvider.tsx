@@ -5,6 +5,7 @@ import {
   useRouteError,
 } from "react-router-dom";
 import { homePageRoute } from "../../pages/home";
+import { tipsPageRoute } from "@/pages/tips";
 import { GenericLayout, NakedLayout } from "../../pages/layouts";
 import { page404Route } from "../../pages/page-404";
 import { pathKeys } from "../../shared/lib/react-router";
@@ -22,7 +23,7 @@ const router = createBrowserRouter([
     children: [
       {
         element: <GenericLayout />,
-        children: [homePageRoute],
+        children: [homePageRoute, tipsPageRoute],
       },
       {
         element: <NakedLayout />,
@@ -35,6 +36,8 @@ const router = createBrowserRouter([
     ],
   },
 ]);
+
+console.log(router);
 
 export function BrowserRouter() {
   return <RouterProvider router={router} />;

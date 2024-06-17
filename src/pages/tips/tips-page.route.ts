@@ -1,20 +1,22 @@
 import { createElement } from 'react';
-import { RouteObject, redirect } from 'react-router-dom';
+import { RouteObject } from 'react-router-dom';
 import { TipsPage } from './tips-page.ui';
-import { pathKeys } from '@/shared/lib/react-router';
+import { TipsListPage } from './tips-list-page.ui';
 
 export const tipsPageRoute: RouteObject = {
   path: 'tips',
   children: [
     {
       index: true,
-      loader: async () => redirect(pathKeys.page404()),
+      element: createElement(TipsListPage),    
     },
     {
       path: ':slug',
       element: createElement(TipsPage),
       loader: async (args) => {
         console.log(args.params.slug);
+
+        return args;
       }
     }
   ]

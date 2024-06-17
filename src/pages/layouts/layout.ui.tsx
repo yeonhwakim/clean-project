@@ -29,6 +29,11 @@ function Navigation() {
               Home
             </NavLink>
           </li>
+          <li>
+            <NavLink className="nav-link" to={pathKeys.tips.root()}>
+              Tips
+            </NavLink>
+          </li>
         </ul>
       </div>
     </nav>

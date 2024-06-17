@@ -1,0 +1,1 @@
+export * as tipsQueries from './tips.queries';

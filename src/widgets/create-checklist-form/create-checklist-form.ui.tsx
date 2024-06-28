@@ -8,7 +8,7 @@ export function CreateChecklistForm() {
       enableReinitialize
       initialValues={initialArticle}
       validate={formikContract(checklistContracts.CreateChecklistSchema)}
-      onSubmit={async () => console.log("?????????")}
+      onSubmit={(article) => console.log(article)}
     >
       <Form>
         <fieldset>

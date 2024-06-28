@@ -1,4 +1,4 @@
-import { create } from "zustand";
+import { StateCreator } from "zustand";
 import { devtools } from "zustand/middleware";
 import type { CreateChecklist } from "./checklist.types";
 
@@ -13,21 +13,18 @@ export type Actions = {
 
 export type FilterState = State & Actions;
 
-const initialTasks: State[] = [
-  {
-    id: 1,
-    checklistId: 1,
-    name: "화장실청소",
-    isChecked: false,
-  },
-  {
-    id: 2,
-    checklistId: 1,
-    name: "분리수거",
-    isChecked: false,
-  },
-];
-
-export const useChecklistStore = create<FilterState>()(
-  devtools((set) => ({createChecklist: ...initialTasks, add: () =>}), { name: "checklist" })
-);
+export const createArticleFilterSlice =
+  (
+    initialState: State,
+  ): StateCreator<
+    FilterState,
+    [['zustand/devtools', never]],
+    [],
+    FilterState
+  > =>
+    (set) => ({
+      ...initialState,
+      add: (createChecklist: CreateChecklist) =>
+        set({ createChecklist }, false, 'add'),
+      reset: () => set(initialState, false, 'reset'),
+    });

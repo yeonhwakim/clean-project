@@ -1,7 +1,7 @@
 import { createElement } from 'react';
 import { RouteObject } from 'react-router-dom';
 import { TipsPage } from './tips-page.ui';
-import { TipsListPage } from './tips-list-page.ui';
+import { TipsListPage } from '../tips-list/tips-list-page.ui';
 import { tipsQueries } from '@/entities/tips'; 
 
 export const tipsPageRoute: RouteObject = {

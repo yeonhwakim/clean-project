@@ -7,6 +7,19 @@ export const ProfileSchema = z.object({
   following: z.boolean(),
 });
 
+export const PageQueryDtoSchema = z.object({
+  offset: z.number().min(0),
+  limit: z.number().min(1),
+});
+
+export const FilterQuerySchema = z.object({
+  tag: z.string().optional(),
+  author: z.string().optional(),
+  favorited: z.string().optional(),
+  following: z.string().optional(),
+})
+
+
 export const TipsSchema = z.object({
   slug: z.string(),
   title: z.string(),

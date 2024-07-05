@@ -1,6 +1,7 @@
 import { ErrorMessage, Field, Form, Formik, useFormikContext } from "formik";
 import { formikContract } from "@/shared/lib/zod";
 import { checklistContracts, checklistTypes } from "@/entities/checklist";
+import { onCreateChecklist } from "@/pages/home/home-page.model";
 
 export function CreateChecklistForm() {
   return (
@@ -8,7 +9,7 @@ export function CreateChecklistForm() {
       enableReinitialize
       initialValues={initialArticle}
       validate={formikContract(checklistContracts.CreateChecklistSchema)}
-      onSubmit={(article) => console.log(article)}
+      onSubmit={(article, { resetForm }) => { onCreateChecklist(article.name); resetForm(); }}
     >
       <Form>
         <fieldset>

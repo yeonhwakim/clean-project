@@ -3,17 +3,18 @@ import { devtools } from "zustand/middleware";
 import type { CreateChecklist } from "./checklist.types";
 
 export type State = {
-  createChecklist: CreateChecklist;
+  checklist: CreateChecklist[];
 };
 
 export type Actions = {
-  add: (createChecklist: CreateChecklist) => void;
+  add: (name: string) => void;
+  check: (id: number) => void;
   reset: () => void;
 };
 
 export type FilterState = State & Actions;
 
-export const createArticleFilterSlice =
+export const createChecklistFilterSlice =
   (
     initialState: State,
   ): StateCreator<
@@ -21,10 +22,10 @@ export const createArticleFilterSlice =
     [['zustand/devtools', never]],
     [],
     FilterState
-  > =>
-    (set) => ({
-      ...initialState,
-      add: (createChecklist: CreateChecklist) =>
-        set({ createChecklist }, false, 'add'),
-      reset: () => set(initialState, false, 'reset'),
-    });
+  > => (set) => ({
+    ...initialState,
+    read: () => set((state) => ({ checklist: [...state.checklist] })),
+    add: (name: string) => set((state) => ({ checklist: [...state.checklist, { id: state.checklist.length + 1, name, checklistId: 1, isChecked: false }] }), false, 'add'),
+    check: (id: number) => set((state) => ({ checklist: state.checklist.map((list) => ({ ...list, isChecked: list.id === id ? !list.isChecked : list.isChecked })) }), false, 'check'),
+    reset: () => set({ checklist: [] }, false, 'reset'),
+  });
